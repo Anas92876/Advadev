@@ -1,0 +1,748 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * Advadev Design System
+ * Version: 2.0
+ * Tailwind CSS v3 Configuration
+ */
+
+:root {
+  /* ========================================
+     PRIMARY COLORS (Logo-based purple palette)
+     ======================================== */
+  --primary-900: #4a1580;
+  --primary-800: #6a1da8;
+  --primary-700: #7f2bff;
+  --primary-600: #832cdb;    /* BRAND PRIMARY */
+  --primary-500: #8726ce;
+  --primary-400: #9d4dd9;
+  --primary-300: #ae32ff;
+  --primary-200: #c77bff;
+  --primary-100: #e5c9ff;
+  --primary-50: #f5edff;
+
+  /* ========================================
+     SECONDARY COLORS (Complementary blues)
+     ======================================== */
+  --secondary-900: #0a2540;
+  --secondary-800: #1a3a5c;
+  --secondary-700: #2d5a8a;
+  --secondary-600: #3b7bc4;
+  --secondary-500: #4a9de8;
+  --secondary-400: #6bb5f0;
+  --secondary-300: #8dcef8;
+  --secondary-200: #b8e2fc;
+  --secondary-100: #ddf2ff;
+  --secondary-50: #f0f9ff;
+
+  /* ========================================
+     ACCENT COLORS (Warm orange)
+     ======================================== */
+  --accent-600: #ff6b35;
+  --accent-500: #ff8c5a;
+  --accent-400: #ffad85;
+
+  /* ========================================
+     NEUTRAL COLORS (Grayscale)
+     ======================================== */
+  --neutral-900: #0f0f10;
+  --neutral-800: #1f1f23;
+  --neutral-700: #2d2d32;
+  --neutral-600: #52525b;
+  --neutral-500: #71717a;
+  --neutral-400: #a1a1aa;
+  --neutral-300: #d4d4d8;
+  --neutral-200: #e4e4e7;
+  --neutral-100: #f4f4f5;
+  --neutral-50: #fafafa;
+  --white: #ffffff;
+
+  /* ========================================
+     SEMANTIC COLORS
+     ======================================== */
+  --success-700: #047857;
+  --success-600: #10b981;
+  --success-500: #34d399;
+  --success-100: #d1fae5;
+
+  --error-700: #b91c1c;
+  --error-600: #ef4444;
+  --error-500: #f87171;
+  --error-100: #fee2e2;
+
+  --warning-700: #b45309;
+  --warning-600: #f59e0b;
+  --warning-500: #fbbf24;
+  --warning-100: #fef3c7;
+
+  --info-700: #1e40af;
+  --info-600: #3b82f6;
+  --info-500: #60a5fa;
+  --info-100: #dbeafe;
+
+  /* ========================================
+     TYPOGRAPHY
+     ======================================== */
+  --font-display: var(--font-manrope), 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-body: var(--font-inter), 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+
+  /* Font Weights */
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+  --font-extrabold: 800;
+
+  /* Line Heights */
+  --leading-tight: 1.2;
+  --leading-snug: 1.35;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.625;
+  --leading-loose: 1.75;
+
+  /* Letter Spacing */
+  --tracking-tighter: -0.04em;
+  --tracking-tight: -0.025em;
+  --tracking-normal: 0em;
+  --tracking-wide: 0.025em;
+  --tracking-wider: 0.05em;
+
+  /* ========================================
+     SPACING SCALE (8px grid)
+     ======================================== */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+  --space-40: 10rem;
+  --space-48: 12rem;
+
+  /* ========================================
+     BORDER RADIUS
+     ======================================== */
+  --radius-xs: 0.125rem;
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.25rem;
+  --radius-3xl: 1.5rem;
+  --radius-full: 9999px;
+
+  /* ========================================
+     SHADOWS & ELEVATION
+     ======================================== */
+  --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.08), 0 1px 2px -1px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.06);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.2);
+  --shadow-primary: 0 8px 24px -6px rgba(131, 44, 219, 0.25);
+  --shadow-primary-lg: 0 16px 40px -8px rgba(131, 44, 219, 0.35);
+
+  /* ========================================
+     ANIMATION & MOTION
+     ======================================== */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-expo: cubic-bezier(0.87, 0, 0.13, 1);
+  --ease-out-back: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-smooth: cubic-bezier(0.45, 0.05, 0.55, 0.95);
+
+  --duration-instant: 100ms;
+  --duration-fast: 150ms;
+  --duration-normal: 250ms;
+  --duration-slow: 400ms;
+  --duration-slower: 600ms;
+
+  /* ========================================
+     BREAKPOINTS & CONTAINERS
+     ======================================== */
+  --screen-xs: 320px;
+  --screen-sm: 640px;
+  --screen-md: 768px;
+  --screen-lg: 1024px;
+  --screen-xl: 1280px;
+  --screen-2xl: 1536px;
+
+  --container-sm: 640px;
+  --container-md: 768px;
+  --container-lg: 1024px;
+  --container-xl: 1280px;
+  --container-2xl: 1400px;
+}
+
+/* ========================================
+   BASE STYLES
+   ======================================== */
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    font-family: var(--font-body);
+    font-weight: var(--font-normal);
+    line-height: var(--leading-normal);
+    color: var(--neutral-900);
+    background-color: var(--white);
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    /* optimizeLegibility is expensive for body text — use headings only */
+    text-rendering: optimizeSpeed;
+  }
+
+  /* Headings use display font */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    letter-spacing: var(--tracking-tight);
+    line-height: var(--leading-tight);
+    font-weight: var(--font-bold);
+    text-rendering: optimizeLegibility;
+  }
+
+  h1 {
+    letter-spacing: var(--tracking-tighter);
+  }
+
+  /* Better text selection */
+  ::selection {
+    background-color: rgba(131, 44, 219, 0.2);
+    color: inherit;
+  }
+
+  /* Scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--neutral-300);
+    border-radius: var(--radius-full);
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--neutral-400);
+  }
+
+  .dark ::-webkit-scrollbar-thumb {
+    background: var(--neutral-700);
+  }
+
+  .dark ::-webkit-scrollbar-thumb:hover {
+    background: var(--neutral-600);
+  }
+
+  /* Focus visible for keyboard navigation */
+  :focus-visible {
+    outline: 2px solid var(--primary-600);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+  }
+}
+
+/* ========================================
+   UTILITY CLASSES
+   ======================================== */
+@layer utilities {
+  .container {
+    width: 100%;
+    max-width: var(--container-xl);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--space-4);
+    padding-right: var(--space-4);
+  }
+
+  @media (min-width: 768px) {
+    .container {
+      padding-left: var(--space-6);
+      padding-right: var(--space-6);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      padding-left: var(--space-8);
+      padding-right: var(--space-8);
+    }
+  }
+
+  /* Glassmorphism */
+  .glass {
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .glass-dark {
+    background: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(131, 44, 219, 0.15);
+  }
+
+  .glass-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  /* Subtle noise texture overlay */
+  .noise {
+    position: relative;
+  }
+
+  .noise::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0.03;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    border-radius: inherit;
+    z-index: 1;
+  }
+
+  /* Glow effects */
+  .glow-purple {
+    box-shadow: 0 0 16px rgba(131, 44, 219, 0.4),
+                0 0 32px rgba(131, 44, 219, 0.2),
+                0 0 48px rgba(131, 44, 219, 0.1);
+  }
+
+  .text-glow-purple {
+    text-shadow: 0 0 16px rgba(131, 44, 219, 0.6),
+                 0 0 32px rgba(131, 44, 219, 0.3);
+  }
+
+  /* Neon border */
+  .neon-border {
+    border: 1px solid rgba(131, 44, 219, 0.5);
+    box-shadow: 0 0 8px rgba(131, 44, 219, 0.3),
+                inset 0 0 8px rgba(131, 44, 219, 0.1);
+  }
+
+  /* Gradient backgrounds */
+  .gradient-purple {
+    background: linear-gradient(135deg, #832cdb 0%, #9820ff 100%);
+  }
+
+  .gradient-radial {
+    background: radial-gradient(circle at center, rgba(131, 44, 219, 0.15) 0%, transparent 70%);
+  }
+
+  /* Refined gradient mesh background */
+  .gradient-mesh {
+    background:
+      radial-gradient(at 20% 30%, rgba(131, 44, 219, 0.08) 0%, transparent 50%),
+      radial-gradient(at 80% 70%, rgba(59, 123, 196, 0.06) 0%, transparent 50%),
+      radial-gradient(at 50% 50%, rgba(255, 107, 53, 0.04) 0%, transparent 50%);
+  }
+
+  /* Section divider */
+  .section-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(131, 44, 219, 0.2), transparent);
+  }
+
+  /* Text balance for better readability */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-pretty {
+    text-wrap: pretty;
+  }
+}
+
+/* ========================================
+   CUSTOM ANIMATIONS
+   ======================================== */
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 1;
+    box-shadow: 0 0 20px rgba(131, 44, 219, 0.5);
+  }
+  50% {
+    opacity: 0.8;
+    box-shadow: 0 0 40px rgba(131, 44, 219, 0.8);
+  }
+}
+
+@keyframes particle-float {
+  0%, 100% {
+    transform: translate(0, 0);
+    opacity: 0.3;
+  }
+  25% {
+    transform: translate(10px, -10px);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translate(-10px, -20px);
+    opacity: 0.3;
+  }
+  75% {
+    transform: translate(-20px, -10px);
+    opacity: 0.6;
+  }
+}
+
+@keyframes subtle-pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes floatSlowAlt {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(12px); }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes heroFadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes gradientFlow {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes blobPulse {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 0.65; transform: scale(1.08); }
+}
+
+/* ========================================
+   ANIMATION UTILITY CLASSES
+   ======================================== */
+
+/* Hero text reveal */
+.hero-reveal {
+  animation: heroFadeUp 0.55s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Floating card animations */
+.float-slow {
+  animation: floatSlow 5.5s ease-in-out infinite;
+}
+
+.float-slow-alt {
+  animation: floatSlowAlt 7s ease-in-out infinite;
+}
+
+/* Page section fade-in */
+.fade-in-up {
+  animation: fadeInUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.fade-delay-1 { animation-delay: 0.10s; }
+.fade-delay-2 { animation-delay: 0.20s; }
+.fade-delay-3 { animation-delay: 0.30s; }
+.fade-delay-4 { animation-delay: 0.40s; }
+.fade-delay-5 { animation-delay: 0.50s; }
+
+/* ========================================
+   FLOATING BLOB KEYFRAMES
+   ======================================== */
+
+@keyframes blobFloat1 {
+  0%, 100% { transform: translate(0px, 0px) scale(1); }
+  33%  { transform: translate(40px, -40px) scale(1.06); }
+  66%  { transform: translate(-25px, 25px) scale(0.94); }
+}
+
+@keyframes blobFloat2 {
+  0%, 100% { transform: translate(0px, 0px) scale(1); }
+  40%  { transform: translate(-50px, 30px) scale(0.96); }
+  75%  { transform: translate(30px, -40px) scale(1.04); }
+}
+
+@keyframes blobFloat3 {
+  0%, 100% { transform: translate(0px, 0px); }
+  50%  { transform: translate(25px, -30px); }
+}
+
+/* Blobs are static by default — opacity-only pulse on large screens, no costly transform animation */
+.blob-1, .blob-2, .blob-3 {}
+
+@media (prefers-reduced-motion: no-preference) and (min-width: 1024px) {
+  .blob-1 { animation: subtle-pulse  8s ease-in-out infinite; }
+  .blob-2 { animation: subtle-pulse 11s ease-in-out infinite 2s; }
+  .blob-3 { animation: subtle-pulse  9s ease-in-out infinite 4s; }
+}
+
+/* ========================================
+   ANIMATED GRADIENT BORDER CARDS
+   ======================================== */
+
+@keyframes gradientBorderMove {
+  0%, 100% { background-position: 0% 50%; }
+  50%       { background-position: 100% 50%; }
+}
+
+/* Outer wrapper: 1px padding + gradient bg = gradient "border" */
+.gbc-wrap {
+  border-radius: 20px;
+  padding: 1px;
+  background-image: linear-gradient(
+    135deg,
+    rgba(131, 44, 219, 0.22),
+    rgba(168, 85, 247, 0.10),
+    rgba(99, 102, 241, 0.16),
+    rgba(131, 44, 219, 0.22)
+  );
+  background-size: 300% 300%;
+  /* Paused by default — runs on hover to save constant GPU load */
+  animation: gradientBorderMove 8s ease infinite paused;
+}
+
+.gbc-wrap:hover {
+  animation-play-state: running;
+}
+
+.dark .gbc-wrap {
+  background-image: linear-gradient(
+    135deg,
+    rgba(131, 44, 219, 0.45),
+    rgba(168, 85, 247, 0.22),
+    rgba(99, 102, 241, 0.30),
+    rgba(131, 44, 219, 0.45)
+  );
+  background-size: 300% 300%;
+}
+
+/* Inner surface: solid bg masks the outer gradient, revealing only the 1px border */
+.gbc-inner {
+  border-radius: 19px;
+  height: 100%;
+  /* Contain layout so internal changes don't trigger full-page layout passes */
+  contain: layout style;
+}
+
+/* ========================================
+   TECH HERO ILLUSTRATION ANIMATIONS
+   ======================================== */
+
+@keyframes chipGlowPulse {
+  0%, 100% {
+    box-shadow: 0 8px 32px rgba(131,44,219,0.12), 0 0 0 0 rgba(131,44,219,0.06);
+  }
+  50% {
+    box-shadow: 0 8px 52px rgba(131,44,219,0.28), 0 0 0 14px rgba(131,44,219,0.03);
+  }
+}
+
+@keyframes floatCard1 {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-12px); }
+}
+@keyframes floatCard2 {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-8px); }
+}
+@keyframes floatCard3 {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-10px); }
+}
+@keyframes floatCard4 {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-14px); }
+}
+
+.chip-pulse   { animation: chipGlowPulse 3s   ease-in-out infinite; }
+.float-card-1 { animation: floatCard1   4s   ease-in-out infinite; }
+.float-card-2 { animation: floatCard2   5s   ease-in-out infinite 0.8s; }
+.float-card-3 { animation: floatCard3   4.5s ease-in-out infinite 1.6s; }
+.float-card-4 { animation: floatCard4   5.5s ease-in-out infinite 2.4s; }
+
+/* ========================================
+   FONT SWITCHING — Arabic ↔ English
+   ======================================== */
+html[lang="ar"] body,
+html[lang="ar"] h1,
+html[lang="ar"] h2,
+html[lang="ar"] h3,
+html[lang="ar"] h4,
+html[lang="ar"] h5,
+html[lang="ar"] h6,
+html[lang="ar"] p,
+html[lang="ar"] span,
+html[lang="ar"] a,
+html[lang="ar"] button,
+html[lang="ar"] input,
+html[lang="ar"] textarea,
+html[lang="ar"] select,
+html[lang="ar"] label {
+  font-family: var(--font-cairo, 'Cairo'), sans-serif;
+}
+
+html[lang="en"] body {
+  font-family: var(--font-manrope, 'Manrope'), -apple-system, sans-serif;
+}
+
+/* ========================================
+   RTL TYPOGRAPHY ADJUSTMENTS
+   ======================================== */
+
+/* Arabic text looks bad with tight letter-spacing — reset it */
+[dir="rtl"] h1,
+[dir="rtl"] h2,
+[dir="rtl"] h3,
+[dir="rtl"] h4,
+[dir="rtl"] h5,
+[dir="rtl"] h6 {
+  letter-spacing: 0;
+}
+
+/* ========================================
+   NAVBAR SEMANTIC THEME TOKENS
+   Auto-switch via .dark class on <html>.
+   Component uses these as Tailwind tokens —
+   no dark: duplicates needed in JSX.
+   ======================================== */
+
+/* ── Navbar semantic tokens ─────────────────────────────────────────────────
+ *
+ * Default (all pages, both themes): always-dark strip.
+ * Exception: home page in LIGHT mode — nav adapts to the theme.
+ *
+ * Mechanism:
+ *   FuturisticNavbar sets  data-nav-theme="auto"   on the home page header.
+ *   All other pages use    data-nav-theme="fixed"  (or no attribute).
+ *   The rule below activates light nav tokens only when:
+ *     • the page is NOT in dark mode  (:root:not(.dark))
+ *     • AND the header carries data-nav-theme="auto"
+ * ──────────────────────────────────────────────────────────────────────── */
+
+/* ── Always-dark base (every page, dark theme, and all non-home pages) ── */
+:root,
+.dark {
+  --nav-bg-scrolled:   rgba(3, 7, 18, 0.92);
+  --nav-border:        rgba(255, 255, 255, 0.07);
+  --nav-text:          #ffffff;
+  --nav-text-muted:    rgba(255, 255, 255, 0.55);
+  --nav-text-subtle:   rgba(255, 255, 255, 0.35);
+  --nav-surface:       rgba(255, 255, 255, 0.07);
+  --nav-overlay-bg:    #030712;
+  --nav-divider:       rgba(255, 255, 255, 0.08);
+  --nav-underline:     rgba(167, 139, 250, 0.70);
+}
+
+/* ── Home page · light mode only ─────────────────────────────────────── */
+:root:not(.dark) header[data-nav-theme="auto"] {
+  --nav-bg-scrolled:   rgba(255, 255, 255, 0.96);
+  --nav-border:        rgba(0, 0, 0, 0.11);
+  --nav-text:          #111827;
+  --nav-text-muted:    rgba(17, 24, 39, 0.62);
+  --nav-text-subtle:   rgba(17, 24, 39, 0.52);
+  --nav-surface:       rgba(0, 0, 0, 0.06);
+  --nav-overlay-bg:    #ffffff;
+  --nav-divider:       rgba(0, 0, 0, 0.10);
+  --nav-underline:     var(--primary-600);
+}
+
+/* ========================================
+   REDUCED MOTION PREFERENCE              */
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
